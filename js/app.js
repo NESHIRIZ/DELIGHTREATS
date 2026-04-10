@@ -120,7 +120,8 @@ function getFavorites() {
 }
 
 function getOrders() {
-  return loadStore(STORAGE_KEYS.orders);
+  const orders = loadStore(STORAGE_KEYS.orders);
+  return Array.isArray(orders) ? orders : [];
 }
 
 function updateCartBadge() {
@@ -436,24 +437,34 @@ function renderOrdersPage() {
     return;
   }
 
-  container.innerHTML = orders.map(order => `
-    <article class="card">
-      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
-        <div>
-          <p style="margin:0;color:var(--text-soft);">Order ID: ${order.id}</p>
-          <h3 style="margin:0.5rem 0 0;font-size:1.2rem;">${order.name}</h3>
-        </div>
-        <div style="font-weight:700;">${formatCurrency(order.total)}</div>
-      </div>
-      <p style="margin:1rem 0 0;color:var(--text-soft);">Placed on ${new Date(order.date).toLocaleDateString()}</p>
-      <div style="margin-top:1rem; display:grid; gap:0.75rem;">
-        ${order.items.map(item => {
+  container.innerHTML = orders.map(order => {
+    const items = Array.isArray(order.items) ? order.items : [];
+    const itemMarkup = items.length
+      ? items.map(item => {
           const product = PRODUCTS.find(prod => prod.id === item.id);
-          return `<div style="display:flex; justify-content:space-between;"><span>${product ? product.name : 'Unknown item'} × ${item.quantity}</span><strong>${formatCurrency((product ? product.price : 0) * item.quantity)}</strong></div>`;
-        }).join('')}
-      </div>
-    </article>
-  `).join('');
+          const quantity = Number(item.quantity) || 0;
+          return `<div style="display:flex; justify-content:space-between; gap:1rem;"><span>${product ? product.name : 'Unknown item'} × ${quantity}</span><strong>${formatCurrency((product ? product.price : 0) * quantity)}</strong></div>`;
+        }).join('')
+      : '<p style="margin:0;color:var(--text-soft);">No order items available.</p>';
+
+    return `
+      <article class="card">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <p style="margin:0;color:var(--text-soft);">Order ID: ${order.id}</p>
+            <h3 style="margin:0.5rem 0 0;font-size:1.2rem;">${order.name}</h3>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-weight:700;">${formatCurrency(order.total || 0)}</div>
+            <p style="margin:0;color:var(--text-soft);font-size:0.95rem;">${new Date(order.date).toLocaleDateString()}</p>
+          </div>
+        </div>
+        <div style="margin-top:1rem; display:grid; gap:0.75rem;">
+          ${itemMarkup}
+        </div>
+      </article>
+    `;
+  }).join('');
 }
 
 function renderRecipesPage() {
@@ -536,8 +547,11 @@ function renderCheckoutPage() {
     saveStore(STORAGE_KEYS.orders, orders);
     saveStore(STORAGE_KEYS.cart, []);
     updateCartBadge();
-    showToast('Order placed successfully!');
+    showToast('Order placed successfully! Redirecting to order history...');
     form.reset();
+    setTimeout(() => {
+      window.location.href = 'orders.html';
+    }, 900);
   });
 }
 
