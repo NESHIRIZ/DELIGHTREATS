@@ -11,7 +11,7 @@ const PRODUCTS = [
     category: 'Cake',
     price: 32.0,
     description: 'Light vanilla sponge layered with creamy frosting and fresh berries.',
-    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: '2',
@@ -19,7 +19,7 @@ const PRODUCTS = [
     category: 'Cupcake',
     price: 8.5,
     description: 'Rich caramel buttercream crowned with a sprinkle of sea salt.',
-    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1587080453948-2bd146f86f3f?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: '3',
@@ -27,7 +27,7 @@ const PRODUCTS = [
     category: 'Cookie',
     price: 6.0,
     description: 'Golden-baked cookies with gooey chocolate melting in every bite.',
-    image: 'https://images.unsplash.com/photo-1511689983427-24d5928b4f72?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: '4',
@@ -35,7 +35,7 @@ const PRODUCTS = [
     category: 'Pastry',
     price: 26.0,
     description: 'A crisp, buttery shell filled with pastry cream and seasonal berries.',
-    image: 'https://images.unsplash.com/photo-1563805042-7684f7a11dc6?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1535920527894-b8757b77b018?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: '5',
@@ -43,7 +43,7 @@ const PRODUCTS = [
     category: 'Cheesecake',
     price: 34.0,
     description: 'Creamy coffee cheesecake with a crisp graham crust and mocha glaze.',
-    image: 'https://images.unsplash.com/photo-1599785209707-96f0c48440f8?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1611871437281-460bfbe1220a?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: '6',
@@ -51,7 +51,7 @@ const PRODUCTS = [
     category: 'Macaron',
     price: 16.0,
     description: 'Delicate almond shells filled with raspberry cream for a bright finish.',
-    image: 'https://images.unsplash.com/photo-1505253210083-6863bfba5b4a?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1569718212ef6c0f1cbab1ab7be06eaf6?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: '7',
@@ -59,7 +59,7 @@ const PRODUCTS = [
     category: 'Pie',
     price: 28.0,
     description: 'Tangy lemon curd topped with toasted meringue on a tender crust.',
-    image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1626082897917-2d5b1c6f6e44?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: '8',
@@ -67,7 +67,7 @@ const PRODUCTS = [
     category: 'Brownie',
     price: 10.0,
     description: 'Decadent fudge brownie finished with silky dark chocolate ganache.',
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1200&q=80',
   },
 ];
 
