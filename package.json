@@ -1,0 +1,12 @@
+{
+  "name": "delight-treats",
+  "version": "1.0.0",
+  "description": "Delight Treats - Homemade Dessert Shop",
+  "scripts": {
+    "lint": "eslint js/*.js",
+    "lint:fix": "eslint js/*.js --fix"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}

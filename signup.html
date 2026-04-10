@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up - Delight Treats</title>
+  <meta name="description" content="Create your Delight Treats account.">
+  <meta name="author" content="Delight Treats">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-gray-900">
+  <div id="header"></div>
+
+  <main class="py-16 md:py-20">
+    <div class="mx-auto w-full max-w-md px-4">
+      <h1 class="mb-8 text-center font-bold text-3xl">Sign Up</h1>
+
+      <form class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-medium">Full Name</label>
+          <input type="text" id="name" required
+                 class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2">
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input type="email" id="email" required
+                 class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2">
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium">Password</label>
+          <input type="password" id="password" required
+                 class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2">
+        </div>
+
+        <button type="submit"
+                class="w-full rounded-md bg-pink-500 px-4 py-3 text-white hover:bg-pink-600">
+          Sign Up
+        </button>
+      </form>
+
+      <p class="mt-4 text-center text-sm">
+        Already have an account? <a href="signin.html" class="text-pink-600 hover:text-pink-800">Sign in</a>
+      </p>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
